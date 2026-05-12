@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Crown
+  - Earrings
+  - Gold
+  - Watches
+  - Necklace
+  - Orb
+  - RingBox
+  - Ringdeck
+  - Scepter
+  - GThings
   layers:
   - Default
   - TransparentFX
