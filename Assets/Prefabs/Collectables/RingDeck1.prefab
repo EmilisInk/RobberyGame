@@ -3703,9 +3703,10 @@ GameObject:
   - component: {fileID: 6321701676971099862}
   - component: {fileID: 8097407703452381724}
   - component: {fileID: 2362204588016630552}
+  - component: {fileID: 7112193480085526691}
   m_Layer: 0
   m_Name: RingDeck1
-  m_TagString: Ringdeck
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3847,6 +3848,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7026044914867049646, guid: 4a127b51b3277d042984beff123210ac, type: 3}
+--- !u!114 &7112193480085526691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7736965458802627529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8475b3405b361e4cb4ffce4240cff97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: RingDeck
+  value: 1
 --- !u!1 &7737271121937041073
 GameObject:
   m_ObjectHideFlags: 0

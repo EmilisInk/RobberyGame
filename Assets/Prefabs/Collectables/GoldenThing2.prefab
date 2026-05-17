@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 419296153591192911}
   - component: {fileID: 2464969729558538629}
   - component: {fileID: 643824028780526393}
+  - component: {fileID: -2918131155351145769}
   m_Layer: 0
   m_Name: GoldenThing2
-  m_TagString: GThings
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +108,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4973961872374997005, guid: fbbd9dc7e18229347aa02b57fc1641e5, type: 3}
+--- !u!114 &-2918131155351145769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122386407111182416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8475b3405b361e4cb4ffce4240cff97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: ThingG2
+  value: 1
 --- !u!1001 &2012633533487494114
 PrefabInstance:
   m_ObjectHideFlags: 0

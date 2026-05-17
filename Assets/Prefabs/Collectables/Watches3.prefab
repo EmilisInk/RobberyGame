@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2683506522962712658}
   - component: {fileID: 205280741153713304}
   - component: {fileID: 6574090066539400062}
+  - component: {fileID: -3915713537671933820}
   m_Layer: 0
   m_Name: Watches3
-  m_TagString: Watches
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +115,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7362744430716391394, guid: 233541574ca4aa446815f271d7d43335, type: 3}
+--- !u!114 &-3915713537671933820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862715424066342221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8475b3405b361e4cb4ffce4240cff97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Watches3
+  value: 5
 --- !u!1001 &463290588652602082
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Looting : MonoBehaviour
+public class WorldItem : MonoBehaviour
 {
-    
+    public ItemData itemData;
 }

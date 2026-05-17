@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3312622329259289677}
   - component: {fileID: 728522372647622791}
   - component: {fileID: -3640716105778271766}
+  - component: {fileID: 1867854326900587348}
   m_Layer: 0
   m_Name: RingBox
-  m_TagString: RingBox
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +108,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4745869228546854153, guid: d53ea006b84815645bf795247b721412, type: 3}
+--- !u!114 &1867854326900587348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233079530549786962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8475b3405b361e4cb4ffce4240cff97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: RingBox
+  value: 1
 --- !u!1001 &5023833419843256295
 PrefabInstance:
   m_ObjectHideFlags: 0

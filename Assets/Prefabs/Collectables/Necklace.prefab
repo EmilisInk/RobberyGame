@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 342967985177786667}
   - component: {fileID: 2532853511411633633}
   - component: {fileID: -508554218820745082}
+  - component: {fileID: 1308582820730876354}
   m_Layer: 0
   m_Name: Necklace
-  m_TagString: Necklace
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +108,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1846951836829590767, guid: 30de7dcc60f4d7a4f9d9e69bded664df, type: 3}
+--- !u!114 &1308582820730876354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046058382164306996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8475b3405b361e4cb4ffce4240cff97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Necklace1
+  value: 1
 --- !u!1 &5570601015338031918
 GameObject:
   m_ObjectHideFlags: 0

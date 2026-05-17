@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 828156150937957808}
   - component: {fileID: 3214097785886785914}
   - component: {fileID: -1451092606911523623}
+  - component: {fileID: -5914550147708928238}
   m_Layer: 0
   m_Name: Crown
-  m_TagString: Crown
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,3 +107,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3033727062268340128, guid: 0b9e41d56efe3c347a1576cab13c1dc6, type: 3}
+--- !u!114 &-5914550147708928238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4006577045991153839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8475b3405b361e4cb4ffce4240cff97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Crown
+  value: 1

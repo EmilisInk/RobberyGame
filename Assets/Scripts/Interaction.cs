@@ -16,11 +16,19 @@ public class Interaction : MonoBehaviour
             if (Physics.Raycast(ray, out hit, range))
             {
                 Debug.Log("Hit: " + hit.collider.name);
-                //Interactable interactable = hit.collider.GetComponent<Interactable>();
-                //if (interactable != null)
-                //{
-                //    interactable.Interact();
-                //}
+                
+                WorldItem worldItem = hit.collider.GetComponent<WorldItem>();
+
+                if (worldItem != null)
+                {
+                    Inventory inventory = GetComponent<Inventory>();
+
+                    inventory.AddItem(worldItem.itemData, 1);
+
+                    Debug.Log("Picked up: " + worldItem.itemData.itemName);
+
+                    Destroy(worldItem.gameObject);
+                }
             }
         }
     }
