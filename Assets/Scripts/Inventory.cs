@@ -35,12 +35,12 @@ public class Inventory : MonoBehaviour
         //InfoPanel.instance.ShowInfo($"+{amount} {itemData.itemName}");
     }
 
-    public bool HasItem(ItemData itemData, int amount)
-    {
-        var found = items.Find(item => item.itemData.itemName == itemData.itemName);
+    //public bool HasItem(ItemData itemData, int amount)
+    //{
+    //    var found = items.Find(item => item.itemData.itemName == itemData.itemName);
 
-        return found != null && found.amount >= amount;
-    }
+    //    return found != null && found.amount >= amount;
+    //}
 
     public void RemoveItem(ItemData itemData, int amount)
     {

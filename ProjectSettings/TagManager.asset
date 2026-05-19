@@ -4,17 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Crown
-  - Earrings
-  - Gold
-  - Watches
-  - Necklace
-  - Orb
-  - RingBox
-  - Ringdeck
-  - Scepter
-  - GThings
   - Item
+  - Bullet
   layers:
   - Default
   - TransparentFX
