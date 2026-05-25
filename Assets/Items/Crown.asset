@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Crown
   m_EditorClassIdentifier: 
   itemName: Crown
-  value: 1
+  value: 600

@@ -8,15 +8,16 @@ public class Guard : MonoBehaviour
     private Transform player;
     private NavMeshAgent agent;
 
-    public float stopDistance = 4f;
-
+    [Header("Combat")]
     public float shootRange = 10f;
-    public float damage = 10f;
+    public float shootCooldown = 1f;
 
     [Header("Bullet")]
     public GameObject bulletPrefab;
     public Transform shootPoint;
-    public float shootCooldown = 1f;
+
+    [Header("Audio")]
+    public AudioSource shootSound;
 
     private float lastShootTime;
 
@@ -35,42 +36,58 @@ public class Guard : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, player.position);
 
-        if(distance > stopDistance)
+        if(distance > shootRange)
         {
             agent.isStopped = false;
-
             agent.SetDestination(player.position);
         }
         else
         {
             agent.isStopped = true;
 
+            LookAtPlayer();
+
             Shoot();
         }
+    }
+
+    void LookAtPlayer()
+    {
+        Vector3 lookPos = player.position - transform.position;
+        lookPos.y = 0;
+
+        transform.rotation = Quaternion.LookRotation(lookPos);
     }
 
     void Shoot()
     {
         if(Time.time < lastShootTime + shootCooldown) return;
 
-        lastShootTime = Time.time;
-
         Vector3 origin = shootPoint.position;
-        Vector3 dir = (player.position + Vector3.up - origin).normalized;
+        Vector3 target = player.position + Vector3.up;
 
-        Ray ray = new Ray(origin, dir);
+        Vector3 dir = (target - origin).normalized;
+
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, shootRange))
+        if(Physics.Raycast(origin, dir, out hit, shootRange))
         {
-            PlayerHealth playerHealth = hit.collider.GetComponent<PlayerHealth>();
-            if(playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-                Debug.Log("Player hit! Remaining health: " + playerHealth.currentHealth);
-            }
+            if(!hit.collider.CompareTag("Player")) return;
+        }
+        else
+        {
+            return;
         }
 
-        //Debug.DrawRay(origin, dir * shootRange, Color.red, 1f);
+        lastShootTime = Time.time;
+
+        shootSound.Play();
+
+        GameObject bullet = Instantiate(bulletPrefab, origin, Quaternion.LookRotation(dir));
+
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+
+        bulletScript.Init(dir);
+
     }
 }

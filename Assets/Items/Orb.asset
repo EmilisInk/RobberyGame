@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Orb
   m_EditorClassIdentifier: 
   itemName: Orb
-  value: 1
+  value: 400

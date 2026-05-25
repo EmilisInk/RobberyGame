@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RingBox
   m_EditorClassIdentifier: 
   itemName: RingBox
-  value: 1
+  value: 200

@@ -6,15 +6,21 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 25f;
     public float lifetime = 3f;
+    public float damage = 10f;
 
     private Vector3 direction;
 
-    public void Init(Vector3 direction)
+    private Rigidbody rb;
+
+    public void Init(Vector3 dir)
     {
-        direction = direction.normalized;
+        direction = dir.normalized;
     }
-    private void Start()
+    void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = direction * speed;
+
         Destroy(gameObject, lifetime);
     }
 
@@ -29,18 +35,12 @@ public class Bullet : MonoBehaviour
 
         if (player != null)
         {
-            player.TakeDamage(10f);
-            Destroy(gameObject);
-            return;
+            player.TakeDamage(damage);
         }
 
         if(!other.isTrigger)
         {
             Destroy(gameObject);
         }
-
-
     }
-
-
 }

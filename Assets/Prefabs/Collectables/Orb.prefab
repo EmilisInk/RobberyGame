@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5074207913378487462}
   - component: {fileID: 7030051395868190828}
   - component: {fileID: -5427078600880993640}
-  - component: {fileID: 8650302268763241276}
   m_Layer: 0
   m_Name: Orb
   m_TagString: Item
@@ -107,17 +106,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4711208715938537054, guid: 3bc3640eeaa93164c913b92f0c307232, type: 3}
---- !u!114 &8650302268763241276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8831345630016817593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8475b3405b361e4cb4ffce4240cff97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Orb
-  value: 1

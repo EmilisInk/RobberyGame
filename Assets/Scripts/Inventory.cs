@@ -31,16 +31,7 @@ public class Inventory : MonoBehaviour
         {
             items.Add(new InventoryItem(itemData, amount));
         }
-
-        //InfoPanel.instance.ShowInfo($"+{amount} {itemData.itemName}");
     }
-
-    //public bool HasItem(ItemData itemData, int amount)
-    //{
-    //    var found = items.Find(item => item.itemData.itemName == itemData.itemName);
-
-    //    return found != null && found.amount >= amount;
-    //}
 
     public void RemoveItem(ItemData itemData, int amount)
     {

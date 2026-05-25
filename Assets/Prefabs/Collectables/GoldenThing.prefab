@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7124415320993897265}
   - component: {fileID: 4988852270333554683}
   - component: {fileID: -5213284223513861914}
-  - component: {fileID: -6216100579192485579}
   m_Layer: 0
   m_Name: GoldenThing
   m_TagString: Item
@@ -108,20 +107,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4973961872374997005, guid: fbbd9dc7e18229347aa02b57fc1641e5, type: 3}
---- !u!114 &-6216100579192485579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6790032704492424750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8475b3405b361e4cb4ffce4240cff97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: ThingG
-  value: 1
 --- !u!1001 &5801233448206664897
 PrefabInstance:
   m_ObjectHideFlags: 0

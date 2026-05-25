@@ -7,26 +7,29 @@ public class Interaction : MonoBehaviour
     public float range = 3f;
     public Camera cam;
 
+    private PlayerMoney money;
+
+    private void Start()
+    {
+        money = GetComponent<PlayerMoney>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, range))
+
+            if(Physics.Raycast(ray, out hit, range))
             {
-                Debug.Log("Hit: " + hit.collider.name);
-                
                 WorldItem worldItem = hit.collider.GetComponent<WorldItem>();
 
                 if (worldItem != null)
                 {
-                    Inventory inventory = GetComponent<Inventory>();
+                    money.AddMoney(worldItem.itemData.value);
 
-                    inventory.AddItem(worldItem.itemData, 1);
-
-                    Debug.Log("Picked up: " + worldItem.itemData.itemName);
-
+                    Debug.Log("Picked up " + worldItem.itemData.name + " worth " + worldItem.itemData.value + " money.");
                     Destroy(worldItem.gameObject);
                 }
             }
