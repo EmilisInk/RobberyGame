@@ -30,6 +30,9 @@ public class Interaction : MonoBehaviour
                     money.AddMoney(worldItem.itemData.value);
 
                     Debug.Log("Picked up " + worldItem.itemData.name + " worth " + worldItem.itemData.value + " money.");
+
+                    Alarm.Instance.TriggerFullAlarm(5);
+
                     Destroy(worldItem.gameObject);
                 }
             }
