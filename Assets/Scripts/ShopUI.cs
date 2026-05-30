@@ -32,9 +32,10 @@ public class ShopUI : MonoBehaviour
         if(GameManager.Instance.totalMoney >= cost)
         {
             GameManager.Instance.totalMoney -= cost;
-            GameManager.Instance.hasArmor = true;
+            GameManager.Instance.boughtArmor = true;
+            GameManager.Instance.armor = 100f;
             UpdateMoney();
-            Debug.Log("Armor purchased!");
+            
         }
         else
         {

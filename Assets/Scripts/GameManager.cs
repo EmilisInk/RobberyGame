@@ -8,10 +8,16 @@ public class GameManager : MonoBehaviour
 
     public int totalMoney;
 
+    public float armor = 0f;
+    public bool boughtArmor = false;
+
+
     [Header("Items")]
     public bool hasArmor;
     public bool hasLockPick;
     public bool hasJammer;
+
+
 
     private void Awake()
     {
