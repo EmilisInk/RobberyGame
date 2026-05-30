@@ -13,6 +13,8 @@ public class Alarm : MonoBehaviour
 
     public bool electricityOff = false;
 
+    public AudioSource alarmAudio;
+
     private void Awake()
     {
         Instance = this;
@@ -24,8 +26,6 @@ public class Alarm : MonoBehaviour
 
         alarmTriggered = true;
 
-        Debug.Log("FULL ALARM TRIGGERED!");
-
         if (electricityOff)
         {
             StartCoroutine(SpawnGuards(1, 10f));
@@ -33,10 +33,8 @@ public class Alarm : MonoBehaviour
         else
         {
             StartCoroutine(SpawnGuards(5, 1f));
+            alarmAudio.Play();
         }
-
-        
-        // Here you can add logic to handle the alarm, such as notifying guards, locking doors, etc.
     }
 
     public void TriggerDelayedGuards(float delay)

@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public float crouchSpeedMultiplier = 0.5f;
     public float crouchHeight = 1f;
 
+    [Header("Audio")]
+    public AudioSource footstepAudio;
+
     public bool isGrounded = true;
     public bool isCrouching;
 
@@ -57,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(crouchKey))
         {
-            if(isCrouching) TryStand();
+            if (isCrouching) TryStand();
             else Crouch();
         }
 
@@ -70,17 +73,17 @@ public class PlayerMovement : MonoBehaviour
 
         float speed = moveSpeed;
 
-        if(isCrouching)
+        if (isCrouching)
             speed *= crouchSpeedMultiplier;
 
-        if(isRunning)
+        if (isRunning)
             speed *= sprintMultiplier;
 
         rb.velocity = new Vector3(move.x * speed, rb.velocity.y, move.z * speed);
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(isGrounded && !isCrouching)
+            if (isGrounded && !isCrouching)
             {
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
             }
@@ -91,50 +94,50 @@ public class PlayerMovement : MonoBehaviour
         Vector3 p = playerCamera.localPosition;
         p.y = Mathf.Lerp(p.y, targetY, Time.deltaTime * camSmooth);
         playerCamera.localPosition = p;
-    }
 
-    void Crouch()
-    {
-        if(isCrouching) return;
-        isCrouching = true;
+        Vector3 mover = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        float newHeight = crouchHeight;
-        float heightDiff = standHeight - newHeight;
-
-        col.height = newHeight;
-
-        col.center = standCenter - new Vector3(0f, heightDiff / 2f, 0f);
-    }
-
-    void TryStand()
-    {
-        if(!isCrouching) return;
-
-        float heightDiff = standHeight - col.height;
-        Vector3 origin = transform.position + Vector3.up * (col.height / 2f);
-
-        if(Physics.Raycast(origin, Vector3.up, heightDiff + 0.1f))
+        if (isGrounded && mover.magnitude > 0.1f)
         {
-            return;
+            if (!footstepAudio.isPlaying)
+            {
+                footstepAudio.PlayOneShot(footstepAudio.clip);
+            }
+        }
+    }
+
+        void Crouch()
+        {
+            if (isCrouching) return;
+            isCrouching = true;
+
+            float newHeight = crouchHeight;
+            float heightDiff = standHeight - newHeight;
+
+            col.height = newHeight;
+
+            col.center = standCenter - new Vector3(0f, heightDiff / 2f, 0f);
         }
 
-        isCrouching = false;
-        col.height = standHeight;
-        col.center = standCenter;
-    }
+        void TryStand()
+        {
+            if (!isCrouching) return;
 
-    private void Lazertronas()
-    {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, col.bounds.extents.y + 0.1f);
-    }
-    //public void TakeDamage(float damage, Vector3 knockbackDirection, float knockbackForce)
-    //{
-    //    health -= damage;
+            float heightDiff = standHeight - col.height;
+            Vector3 origin = transform.position + Vector3.up * (col.height / 2f);
 
-    //    if (rb != null)
-    //    {
-    //        rb.AddForce(knockbackDirection * knockbackForce * 20, ForceMode.Impulse);
+            if (Physics.Raycast(origin, Vector3.up, heightDiff + 0.1f))
+            {
+                return;
+            }
 
-    //    }
-    //}
+            isCrouching = false;
+            col.height = standHeight;
+            col.center = standCenter;
+        }
+
+        private void Lazertronas()
+        {
+            isGrounded = Physics.Raycast(transform.position, Vector3.down, col.bounds.extents.y + 0.1f);
+        }
 }

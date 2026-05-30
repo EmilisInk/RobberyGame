@@ -7,6 +7,8 @@ public class Interaction : MonoBehaviour
     public float range = 3f;
     public Camera cam;
 
+    public AudioSource pickupAudio;
+
     private PlayerMoney money;
 
     private void Start()
@@ -28,6 +30,8 @@ public class Interaction : MonoBehaviour
                 if (worldItem != null)
                 {
                     money.AddMoney(worldItem.itemData.value);
+
+                    pickupAudio.Play();
 
                     Debug.Log("Picked up " + worldItem.itemData.name + " worth " + worldItem.itemData.value + " money.");
 
