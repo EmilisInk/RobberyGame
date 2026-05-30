@@ -9,6 +9,5 @@ public class PlayerMoney : MonoBehaviour
     public void AddMoney(int amount)
     {
         money += amount;
-        Debug.Log("Money added: " + amount + ". Total money: " + money);
     }
 }

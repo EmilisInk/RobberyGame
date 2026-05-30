@@ -33,8 +33,6 @@ public class Interaction : MonoBehaviour
 
                     pickupAudio.Play();
 
-                    Debug.Log("Picked up " + worldItem.itemData.name + " worth " + worldItem.itemData.value + " money.");
-
                     Alarm.Instance.TriggerFullAlarm(5);
 
                     Destroy(worldItem.gameObject);

@@ -6,6 +6,8 @@ public class Electricity : MonoBehaviour
 {
     public bool isUsed = false;
 
+    public AudioSource electricityAudio;
+
     private void OnTriggerStay(Collider other)
     {
         if(!other.CompareTag("Player"))
@@ -16,14 +18,13 @@ public class Electricity : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && !isUsed)
         {
             isUsed = true;
-            Debug.Log("Electricity used!");
+            electricityAudio.Play();
             TurnOffElectricity();
         }
     }
 
     void TurnOffElectricity()
     {
-        Debug.Log("Electricity turned off!");
 
         Alarm.Instance.SetElectricityOff();
     }
